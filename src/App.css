@@ -1,0 +1,32 @@
+@import 'tailwindcss';
+
+/* kolory
+#31255a	(49,37,90)
+#8fe0ff	(143,224,255)
+#75b4e3	(117,180,227)
+#54416d	(84,65,109)
+#2b235a	(43,35,90)
+*/
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-background: #8fe0ff;
+  --color-text: #31255a;
+}
+
+.dark {
+  --color-background: #2b235a;
+  --color-text: #8fe0ff;
+}
+
+body {
+  margin: 0;
+  background-size: cover;
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
+
+button {
+  margin: calc(var(--spacing) * 5);
+}
