@@ -1,5 +1,5 @@
 const WeatherPage = () => {
-  return <div>WeatherPage</div>;
+  return <div className="page">WeatherPage</div>;
 };
 
 export default WeatherPage;

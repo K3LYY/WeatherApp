@@ -26,10 +26,17 @@ body {
   margin: 0;
   background-size: cover;
   background-color: var(--color-background);
-  /* color: var(--color-text); */
+  color: var(--color-text);
+  /* align-items: center;
+  flex-direction: column; */
 }
 
-button {
+.page {
+  text-align: center;
+}
+
+button,
+input {
   margin: calc(var(--spacing) * 3);
   padding: calc(var(--spacing) * 2);
   border-radius: var(--radius-sm);
@@ -37,6 +44,15 @@ button {
   font-size: var(--text-xl); /* 1.25rem (20px) */
   line-height: var(--text-xl--line-height); /* calc(1.75 / 1.25) */
 }
+button {
+  cursor: pointer;
+}
+.inputBtn,
+input {
+  border: solid var(--color-text) 2px;
+  background-color: var(--color-navBackground);
+}
+
 .navBtn:hover {
   text-decoration: underline;
   text-decoration-thickness: 2px;
@@ -47,4 +63,10 @@ nav {
   text-underline-offset: 6px;
   font-size: var(--text-xl); /* 1.25rem (20px) */
   line-height: var(--text-xl--line-height); /* calc(1.75 / 1.25) */
+  margin-bottom: calc(var(--spacing) * 10);
+}
+
+h1 {
+  font-size: var(--text-3xl); /* 1.875rem (30px) */
+  line-height: var(--text-3xl--line-height); /* calc(2.25 / 1.875) */
 }

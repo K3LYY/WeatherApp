@@ -1,5 +1,5 @@
 const AirQualityPage = () => {
-  return <div>AirQualityPage</div>;
+  return <div className="page">AirQualityPage</div>;
 };
 
 export default AirQualityPage;
