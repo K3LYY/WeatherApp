@@ -6,16 +6,16 @@ const App = () => {
   return (
     <div className="content">
       <nav>
-        <ChangeThemeButton />
         <NavLink to="/" end>
-          <button>Strona główna</button>
+          <button className="navBtn">Strona główna</button>
         </NavLink>
         <NavLink to="pogoda" end>
-          <button>Aktualna pogoda</button>
+          <button className="navBtn">Aktualna pogoda</button>
         </NavLink>
         <NavLink to="powietrze" end>
-          <button>Jakość powietrza</button>
+          <button className="navBtn">Jakość powietrza</button>
         </NavLink>
+        <ChangeThemeButton />
       </nav>
 
       <Outlet />

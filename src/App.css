@@ -12,21 +12,39 @@
 
 @theme {
   --color-background: #8fe0ff;
-  --color-text: #31255a;
+  --color-text: black;
+  --color-navBackground: #75b4e3;
 }
 
 .dark {
   --color-background: #2b235a;
-  --color-text: #8fe0ff;
+  --color-text: white;
+  --color-navBackground: #54416d;
 }
 
 body {
   margin: 0;
   background-size: cover;
   background-color: var(--color-background);
-  color: var(--color-text);
+  /* color: var(--color-text); */
 }
 
 button {
-  margin: calc(var(--spacing) * 5);
+  margin: calc(var(--spacing) * 3);
+  padding: calc(var(--spacing) * 2);
+  border-radius: var(--radius-sm);
+  color: var(--color-text);
+  font-size: var(--text-xl); /* 1.25rem (20px) */
+  line-height: var(--text-xl--line-height); /* calc(1.75 / 1.25) */
+}
+.navBtn:hover {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+nav {
+  background-color: var(--color-navBackground);
+  font-weight: 600;
+  text-underline-offset: 6px;
+  font-size: var(--text-xl); /* 1.25rem (20px) */
+  line-height: var(--text-xl--line-height); /* calc(1.75 / 1.25) */
 }

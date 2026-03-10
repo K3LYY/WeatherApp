@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 import { ThemeContext } from '../contexts/ThemeContext';
 import '../App.css';
+import slonce from '../../public/sunny.png';
+import ksiezyc from '../../public/moon.png';
 
 const ChangeThemeButton = () => {
   const { isDark, toggleTheme } = useContext(ThemeContext);
@@ -10,8 +12,9 @@ const ChangeThemeButton = () => {
         toggleTheme();
         console.log(isDark);
       }}
+      className="h-11 w-10 float-right"
     >
-      {isDark ? '☀️' : '🌙'}
+      {isDark ? <img src={slonce} /> : <img src={ksiezyc} />}
     </button>
   );
 };
