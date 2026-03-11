@@ -1,10 +1,12 @@
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import LocalizationButton from './LocalizationButton';
 import { useNavigate } from 'react-router';
 import WeatherApi from '../WeatherInstanceApi';
+import { CityContext } from '../contexts/CityContext';
 
 const CityUserInput = () => {
   const [userInput, setUserInput] = useState<string>('');
+  const { setCityData } = useContext(CityContext);
   const navigate = useNavigate();
 
   const getGeoData = async () => {
@@ -12,9 +14,8 @@ const CityUserInput = () => {
     try {
       const response = await WeatherApi.get(`/geo/1.0/direct?q=${userInput}`);
       console.log(response);
-      navigate(
-        `/pogoda?lat=${response.data[0].lat}&lon=${response.data[0].lon}`,
-      );
+      navigate(`/pogoda`);
+      setCityData(userInput, response.data[0].lon, response.data[0].lat);
     } catch (error) {
       console.log(error);
     } finally {

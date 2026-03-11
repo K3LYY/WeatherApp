@@ -33,6 +33,7 @@ body {
 
 .page {
   text-align: center;
+  align-items: center;
 }
 
 button,
@@ -69,4 +70,16 @@ nav {
 h1 {
   font-size: var(--text-3xl); /* 1.875rem (30px) */
   line-height: var(--text-3xl--line-height); /* calc(2.25 / 1.875) */
+}
+
+.center {
+  margin: auto;
+  display: block;
+}
+
+.detal {
+  margin: calc(var(--spacing) * 5);
+  background-color: var(--color-navBackground);
+  border-radius: var(--radius-sm);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
