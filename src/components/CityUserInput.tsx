@@ -15,7 +15,11 @@ const CityUserInput = () => {
       const response = await WeatherApi.get(`/geo/1.0/direct?q=${userInput}`);
       console.log(response);
       navigate(`/pogoda`);
-      setCityData(userInput, response.data[0].lon, response.data[0].lat);
+      setCityData(() => ({
+        city: userInput,
+        lon: response.data[0].lon,
+        lat: response.data[0].lat,
+      }));
     } catch (error) {
       console.log(error);
     } finally {

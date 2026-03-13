@@ -1,5 +1,6 @@
 import CityUserInput from '../components/CityUserInput';
 import WeatherSupplierText from '../components/WeatherSupplierText';
+import FavoritesList from '../components/FavoritesList';
 
 const HomePage = () => {
   return (
@@ -8,6 +9,8 @@ const HomePage = () => {
       <br />
       <CityUserInput />
       <WeatherSupplierText />
+      <br />
+      <FavoritesList />
     </div>
   );
 };

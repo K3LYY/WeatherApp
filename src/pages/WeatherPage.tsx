@@ -5,6 +5,7 @@ import { useContext, useEffect, useState } from 'react';
 import { CityContext } from '../contexts/CityContext';
 import SunTime from '../components/SunTime';
 import WeatherDetails from '../components/WeatherDetails';
+import FavouriteButton from '../components/FavouriteButton';
 
 const WeatherPage = () => {
   const { city, lon, lat, setCityData } = useContext(CityContext);
@@ -56,7 +57,10 @@ const WeatherPage = () => {
   return (
     <div className="page">
       WeatherPage
-      <h1>{city}</h1>
+      <div>
+        <h1>{city}</h1>
+      </div>
+      <FavouriteButton />
       <TimeClock />
       <WeatherIcon iconId={weatherData.icon} />
       <h1>{weatherData.temperature}°C</h1>

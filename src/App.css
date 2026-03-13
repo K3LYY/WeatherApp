@@ -22,6 +22,10 @@
   --color-navBackground: #54416d;
 }
 
+* {
+  transition: background-color 0.5s;
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   background-size: cover;
@@ -37,7 +41,8 @@ body {
 }
 
 button,
-input {
+input,
+li {
   margin: calc(var(--spacing) * 3);
   padding: calc(var(--spacing) * 2);
   border-radius: var(--radius-sm);
@@ -49,7 +54,8 @@ button {
   cursor: pointer;
 }
 .inputBtn,
-input {
+input,
+li {
   border: solid var(--color-text) 2px;
   background-color: var(--color-navBackground);
 }
@@ -86,4 +92,9 @@ h1 {
 
 span {
   border-radius: var(--radius-md);
+}
+
+img {
+  display: block;
+  margin: auto;
 }
