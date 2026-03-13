@@ -2,7 +2,6 @@ import './App.css';
 import ChangeThemeButton from './components/ChangeThemeButton';
 import { Outlet, NavLink } from 'react-router';
 
-//godzina new Date(1661882248*1000).toLocaleTimeString()
 const App = () => {
   return (
     <div className="content">

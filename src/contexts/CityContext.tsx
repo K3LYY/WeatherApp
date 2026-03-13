@@ -1,15 +1,21 @@
 import { createContext, useState, useEffect } from 'react';
-import type { ReactNode } from 'react';
+import type { Dispatch, ReactNode, SetStateAction } from 'react';
 
 interface ICityContext {
   children: ReactNode;
 }
 
+type TCityData = {
+  city: string;
+  lon: string;
+  lat: string;
+};
+
 export const CityContext = createContext<{
   city: string;
   lon: string;
   lat: string;
-  setCityData: (input: string, lonInput: string, latInput: string) => void;
+  setCityData: Dispatch<SetStateAction<TCityData>>;
 }>({
   city: 'Warszawa',
   lon: '21.0067249',
@@ -18,32 +24,19 @@ export const CityContext = createContext<{
 });
 
 export const CityProvider = ({ children }: ICityContext) => {
-  const [city, setCity] = useState<string>(
-    localStorage.getItem('city') ?? 'Warszawa',
-  );
-  const [lon, setLon] = useState<string>(
-    localStorage.getItem('lon') ?? '21.0067249',
-  );
-  const [lat, setLat] = useState<string>(
-    localStorage.getItem('lat') ?? '52.2319581',
-  );
-
-  const setCityData = (input: string, lonInput: string, latInput: string) => {
-    setCity(input);
-    setLat(latInput);
-    setLon(lonInput);
-    console.log('działają dane');
-  };
+  const [cityData, setCityData] = useState({
+    city: localStorage.getItem('city') ?? 'Warszawa',
+    lon: localStorage.getItem('lon') ?? '21.0067249',
+    lat: localStorage.getItem('lat') ?? '52.2319581',
+  });
 
   useEffect(() => {
-    localStorage.setItem('city', city);
-    localStorage.setItem('lon', lon);
-    localStorage.setItem('lat', lat);
-  }, [city, lon, lat]);
+    localStorage.setItem('city', cityData.city);
+    localStorage.setItem('lon', cityData.lon);
+    localStorage.setItem('lat', cityData.lat);
+  }, [cityData]);
 
   return (
-    <CityContext value={{ city, lon, lat, setCityData }}>
-      {children}
-    </CityContext>
+    <CityContext value={{ ...cityData, setCityData }}>{children}</CityContext>
   );
 };

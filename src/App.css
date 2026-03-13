@@ -83,3 +83,7 @@ h1 {
   border-radius: var(--radius-sm);
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
+
+span {
+  border-radius: var(--radius-md);
+}
